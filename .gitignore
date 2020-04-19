@@ -114,3 +114,5 @@ data/butterfly
 data/skate-park
 data/surf
 
+# Specific to this project
+**/_ext/

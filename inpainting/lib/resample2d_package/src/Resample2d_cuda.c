@@ -1,4 +1,4 @@
-#include <THC.h>
+#include <THC/THC.h>
 #include <THCGeneral.h>
 
 #include "Resample2d_kernel.h"

@@ -1,5 +1,5 @@
-#include <THC.h>
-#include <THCGeneral.h>
+#include <THC/THC.h>
+#include <THC/THCGeneral.h>
 
 #include "ChannelNorm_kernel.h"
 

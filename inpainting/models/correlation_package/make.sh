@@ -1,14 +1,17 @@
 #!/usr/bin/env bash
-TORCH=$(python -c "import os; import torch; print(os.path.dirname(torch.__file__))")
+
+export PATH=/usr/local/cuda/bin:$PATH
+
+TORCH=$(python3 -c "import os; import torch; print(os.path.dirname(torch.__file__))")
 
 cd src
 
 echo "Compiling correlation kernels by nvcc..."
 
-rm correlation_cuda_kernel.o
-rm -r ../_ext
+rm -f correlation_cuda_kernel.o
+rm -rf ../_ext
 
-nvcc -c -o correlation_cuda_kernel.o correlation_cuda_kernel.cu -x cu -Xcompiler -fPIC -arch=sm_52
+nvcc -c -o correlation_cuda_kernel.o correlation_cuda_kernel.cu -x cu -std=c++11 -Xcompiler -fPIC -arch=sm_30
 
 cd ../
-python build.py
+python3 build.py
