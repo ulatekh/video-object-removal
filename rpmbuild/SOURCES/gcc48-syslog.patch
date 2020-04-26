@@ -1,0 +1,12 @@
+diff -ur gcc-4.8.2-20131017-orig/libssp/ssp.c gcc-4.8.2-20131017/libssp/ssp.c
+--- gcc-4.8.2-20131017-orig/libssp/ssp.c	2013-02-08 09:24:07.000000000 -0700
++++ gcc-4.8.2-20131017/libssp/ssp.c	2020-04-16 07:47:18.836324885 -0700
+@@ -136,7 +136,7 @@
+ #ifdef HAVE_SYSLOG_H
+   /* Only send the error to syslog if there was no tty available.  */
+   else
+-    syslog (LOG_CRIT, msg3);
++    syslog (LOG_CRIT, "%s", msg3);
+ #endif /* HAVE_SYSLOG_H */
+ 
+   /* Try very hard to exit.  Note that signals may be blocked preventing

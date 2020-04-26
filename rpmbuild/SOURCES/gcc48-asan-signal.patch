@@ -1,0 +1,11 @@
+diff -ur gcc-4.8.2-20140120-orig/libsanitizer/asan/asan_linux.cc gcc-4.8.2-20140120/libsanitizer/asan/asan_linux.cc
+--- gcc-4.8.2-20140120-orig/libsanitizer/asan/asan_linux.cc	2013-01-24 00:59:02.000000000 -0700
++++ gcc-4.8.2-20140120/libsanitizer/asan/asan_linux.cc	2020-04-04 22:19:06.379276281 -0700
+@@ -28,6 +28,7 @@
+ #include <stdio.h>
+ #include <unistd.h>
+ #include <unwind.h>
++#include <signal.h>
+ 
+ #if !ASAN_ANDROID
+ // FIXME: where to get ucontext on Android?
